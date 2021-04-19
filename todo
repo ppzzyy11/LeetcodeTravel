@@ -1,7 +1,12 @@
-- https://leetcode-cn.com/problems/majority-element-ii/
-    mo er vote
+There are  257 simple problems, 532 simple problems, 211 hard problems in the first 1000 problems.
+We will just skip all the simple problems. In proper ways can we solve each simple problem in 15 minutes and each hard problem in 20 minutes. So at least, we should spend 200 hours in totoal to travel previous 1000 leetcode problems without reviews. If added time to review, we need at least 300 hours in totoal. If we spent 2 hours each day in weekdays and 5 hours each day in weekends, summing to 20 hours each day, there is 15 weeks before we complete our goal, which is unaccpetable.
+
+However, if we spent 8 hours on weekdays and 4 hours each weekends, summing up to 48 hours each day, there is only 6.25 weeks before we complete our plan.
 
 array to do:
 finish before 2021/04/25
     mid 50
     hard 4
+
+- https://leetcode-cn.com/problems/majority-element-ii/
+    mo er vote
