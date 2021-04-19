@@ -3,6 +3,8 @@ We will just skip all the simple problems. In proper ways can we solve each simp
 
 However, if we spent 8 hours on weekdays and 4 hours each weekends, summing up to 48 hours each day, there is only 6.25 weeks before we complete our plan.
 
+Apart from that, we need spend 30 minutes each day to practice speaking English.
+
 array to do:
 finish before 2021/04/25
     mid 50
@@ -10,3 +12,5 @@ finish before 2021/04/25
 
 - https://leetcode-cn.com/problems/majority-element-ii/
     mo er vote
+- https://leetcode-cn.com/problems/circular-array-loop/
+    fast and slow pointers to detect cycles
