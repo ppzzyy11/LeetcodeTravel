@@ -1,7 +1,9 @@
-- https://leetcode-cn.com/problems/majority-element-ii/
-    mo er vote
-
 array to do:
 finish before 2021/04/25
-    mid 50
-    hard 4
+    middle 50*15=750minutes
+    hard 4*30=120minutes
+    total 870 minutes = 15 hours = 2 hours * 5 + 5 hours *2
+
+
+- https://leetcode-cn.com/problems/majority-element-ii/
+    moer vote
