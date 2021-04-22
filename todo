@@ -20,3 +20,9 @@ finish before 2021/04/25
     mo er vote
 - https://leetcode-cn.com/problems/circular-array-loop/
     fast and slow pointers to detect cycles
+
+std heap
+std priority queue
+self-defined greater operator
+
+summarize templates
