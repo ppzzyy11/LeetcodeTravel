@@ -20,10 +20,17 @@ finish before 2021/04/25
     mo er vote
 - https://leetcode-cn.com/problems/circular-array-loop/
     fast and slow pointers to detect cycles
-
+- https://leetcode-cn.com/problems/task-scheduler/
+    Task Scheduler
+- https://leetcode-cn.com/problems/maximum-average-subarray-ii/
+    Hard
+- https://leetcode-cn.com/problems/beautiful-arrangement-ii/
+    
 std heap
 std priority queue
 self-defined greater operator
 
 summarize templates
 
+
+summarize all maximum swap, next_permutation problems 670
