@@ -1,0 +1,32 @@
+Mon 26 Apr 2021 12:06:16 AM AWST
+Without Simple
+    Total   Diff    Done    Left
+    532     middle  67      465
+    211     hard    13      198
+=   743     *       80      663
+
+There are  257 simple problems, 532 middle problems, 211 hard problems in the first 1000 problems.
+We will just skip all the simple problems. In proper ways can we solve each simple problem in 15 minutes and each hard problem in 20 minutes. So at least, we should spend 200 hours in totoal to travel previous 1000 leetcode problems without reviews. If added time to review, we need at least 300 hours in totoal. If we spent 2 hours each day in weekdays and 5 hours each day in weekends, summing to 20 hours each day, there is 15 weeks before we complete our goal, which is unaccpetable.
+
+However, if we spent 8 hours on weekdays and 4 hours each weekends, summing up to 48 hours each day, there is only 6.25 weeks before we complete our plan.
+
+Apart from that, we need spend 30 minutes each day to practice speaking English.
+
+array to do:
+finish before 2021/04/25
+    mid 50
+    hard 4
+
+Mon 26 Apr 2021 12:06:28 AM AWST
+array to do:
+finish before 2021/04/25
+    middle 50*15=750minutes     26  left
+    hard 4*30=120minutes        4   left
+    total 870 minutes = 15 hours = 2 hours * 5 + 5 hours *2 = 20 hours
+
+
+/*all*/
+    /*257     simple  problems    21*/
+    /*532     middle  problems    67*/
+    /*211     hard    problems    13*/
+/*=   1000                        101*/
