@@ -1,4 +1,23 @@
+Total:
+    previous 1000 problems in Leetcode-CN, there are 540-7=533 middle problems, 211 hard problems.
+    533 * 15 = 7995 minutes
+    221 * 30 = 6630 minutes
+    7795+6630=14625 minutes = 243.75 hours = 5.08 weeks
 
+However, if we spent 8 hours on weekdays and 4 hours each weekends, summing up to 48 hours each week, there is only 6.25 weeks before we complete our plan.
+
+Apart from that, we need spend 30 minutes each day to practice speaking English.
+
+array to do:
+finish before 2021/04/25
+    mid 50
+    hard 4
+
+array to do:
+finish before 2021/04/25
+    middle 50*15=750minutes
+    hard 4*30=120minutes
+    total 870 minutes = 15 hours = 2 hours * 5 + 5 hours *2 = 20 hours
 
 - https://leetcode-cn.com/problems/majority-element-ii/
     mo er vote
