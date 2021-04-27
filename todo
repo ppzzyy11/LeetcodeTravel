@@ -1,7 +1,7 @@
 There are  257 simple problems, 532 simple problems, 211 hard problems in the first 1000 problems.
 We will just skip all the simple problems. In proper ways can we solve each simple problem in 15 minutes and each hard problem in 20 minutes. So at least, we should spend 200 hours in totoal to travel previous 1000 leetcode problems without reviews. If added time to review, we need at least 300 hours in totoal. If we spent 2 hours each day in weekdays and 5 hours each day in weekends, summing to 20 hours each day, there is 15 weeks before we complete our goal, which is unaccpetable.
 
-However, if we spent 8 hours on weekdays and 4 hours each weekends, summing up to 48 hours each day, there is only 6.25 weeks before we complete our plan.
+However, if we spent 8 hours on weekdays and 4 hours each weekends, summing up to 48 hours each week, there is only 6.25 weeks before we complete our plan.
 
 Apart from that, we need spend 30 minutes each day to practice speaking English.
 
@@ -20,3 +20,10 @@ finish before 2021/04/25
     mo er vote
 - https://leetcode-cn.com/problems/circular-array-loop/
     fast and slow pointers to detect cycles
+
+
+Total:
+    previous 1000 problems in Leetcode-CN, there are 540-7=533 middle problems, 211 hard problems.
+    533 * 15 = 7995 minutes
+    221 * 30 = 6630 minutes
+    7795+6630=14625 minutes = 243.75 hours = 5.08 weeks
