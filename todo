@@ -1,5 +1,8 @@
-There are  257 simple problems, 532 simple problems, 211 hard problems in the first 1000 problems.
-We will just skip all the simple problems. In proper ways can we solve each simple problem in 15 minutes and each hard problem in 20 minutes. So at least, we should spend 200 hours in totoal to travel previous 1000 leetcode problems without reviews. If added time to review, we need at least 300 hours in totoal. If we spent 2 hours each day in weekdays and 5 hours each day in weekends, summing to 20 hours each day, there is 15 weeks before we complete our goal, which is unaccpetable.
+Total:
+    previous 1000 problems in Leetcode-CN, there are 540-7=533 middle problems, 211 hard problems.
+    533 * 15 = 7995 minutes
+    221 * 30 = 6630 minutes
+    7795+6630=14625 minutes = 243.75 hours = 5.08 weeks
 
 However, if we spent 8 hours on weekdays and 4 hours each weekends, summing up to 48 hours each week, there is only 6.25 weeks before we complete our plan.
 
@@ -20,10 +23,20 @@ finish before 2021/04/25
     mo er vote
 - https://leetcode-cn.com/problems/circular-array-loop/
     fast and slow pointers to detect cycles
+- https://leetcode-cn.com/problems/task-scheduler/
+    Task Scheduler
+- https://leetcode-cn.com/problems/maximum-average-subarray-ii/
+    Hard
+- https://leetcode-cn.com/problems/beautiful-arrangement-ii/
+    
+std heap
+std priority queue
+self-defined greater operator
 
+summarize templates
 
-Total:
-    previous 1000 problems in Leetcode-CN, there are 540-7=533 middle problems, 211 hard problems.
-    533 * 15 = 7995 minutes
-    221 * 30 = 6630 minutes
-    7795+6630=14625 minutes = 243.75 hours = 5.08 weeks
+https://leetcode-cn.com/problems/find-k-th-smallest-pair-distance/
+
+summarize all maximum swap, next_permutation problems 670
+
+stl map sorted, upper_bound so on.

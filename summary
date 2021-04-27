@@ -1,6 +1,15 @@
 548 cut branches to reduce time complexity
-    There are three pointers, so the TC must be O(N^3)
+    There are three pointers, so the TC must be O(N^3):
     1. We can three pointers are too many, fix the middle pointer and cut branches;
-    2. travel two times with TC O(N^2).
+    2. Create middle level data.
+      travel two times with TC O(N^2). The first travel find N temporary results/pairs;
+    3. Fix one pointer, and use two pointers to find all sulution. O(N^2);
+
+
+https://leetcode-cn.com/problems/maximum-average-subarray-ii/
+    Instead of brute force, we binarily search the result and verify whther the result is valid.
+
+667.cpp
     
+
 
