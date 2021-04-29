@@ -18,3 +18,5 @@ analyze boarder cases
 
 
 analyze problems instead go straight to debug
+
+In some dynamic problems, map as dp can save space than matrix, because not all grid will be used
