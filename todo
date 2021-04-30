@@ -32,6 +32,7 @@ finish before 2021/04/25
 std heap
 std priority queue
 self-defined greater operator
+std customed type hash
 
 summarize templates
 
