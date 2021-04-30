@@ -28,6 +28,32 @@ using namespace std;
 
 
 class Solution {
+        const long MOD = 1000000007;
+public:
+    int sumSubarrayMins(vector<int>& arr) {
+        arr.push_back(0);
+        stack<int> st;
+        st.push(arr.size()-1);
+
+        long res=0;
+
+        for(long k =0; k<arr.size(); k++){
+            while(st.size()!=0&&arr[st.top()]>=arr[k]){
+                long j =st.top();
+                st.pop();
+                //calculate
+                long i = st.size()<=1?-1:st.top();
+                res+=(k-j)*(j-i)*arr[j];
+                res=res%MOD;
+            }
+            st.push(k);
+        }
+
+        return res;
+    }
+};
+
+class SolutionN2 {
     long MOD = 1000000007;
 public:
     int sumSubarrayMins(vector<int>& arr) {

@@ -30,21 +30,36 @@ using namespace std;
 class Solution {
 public:
     int maxSubarraySumCircular(vector<int>& A) {
-        vector<int> left(A.size(), 0);
-        vector<int> right(A.size(), 0);
-        int tmp=0;
+        vector<int> dp(A.size(), 0);
+        vector<int> r(A.size(), 0);
         for(int i=0; i<A.size(); i++){
-            tmp+=A[i];
-            left[i]=tmp;
+            if(i==0){
+                dp[i]=A[i];
+                continue;
+            }
+            dp[i]=max(dp[i-1], 0)+A[i];
         }
 
-        tmp=0;
+        int sum=0;
         for(int i=A.size()-1; i>=0; i--){
-            tmp+=A[i];
-            right[i]=tmp;
+            sum+=A[i];
+            if(i==A.size()-1){
+                r[i]=A[i];
+                continue;
+            }
+            r[i]=max(r[i+1],sum);
         }
 
+        int res=INT_MIN;
+        sum=0;
+        for(int i=0; i<A.size(); i++){
+            sum+=A[i];
+            res=max(res, dp[i]);
+            res=max(res, sum+(i+2<A.size()?r[i+2]:0));
+            // res=max(res, dp[i]+(i+2<A.size()?r[i+2]:0));
+        }
 
+        return res;
     }
 };
 

@@ -27,10 +27,35 @@
 using namespace std;
 
 
+class Solution {
+    const long MOD = 1000000007;
+    vector<long> rec;
+public:
+    int sumSubseqWidths(vector<int>& A) {
+        int res=0;
+        sort(A.begin(), A.end());
+        pow(A.size());
+        for(int i=0; i<A.size(); i++){
+            res+=((rec[i]-rec[A.size()-i-1])%MOD*A[i])%MOD;
+            res=res%MOD;
+        }
+        return res;
+    }
+    void pow(int n){
+        rec.resize(n, 0);
+        long res=1;
+        rec[0]=res;
+        for(int i=1; i<n; i++){
+            res*=2;
+            res%=MOD;
+            rec[i]=res;
+        }
+    }
+};
+
 
 //TC O(N*lgN)
 //https://leetcode-cn.com/problems/sum-of-subsequence-widths/solution/zi-xu-lie-kuan-du-zhi-he-by-leetcode/
-
 //TLE O(N^2)
 class SolutionN2 {
     long long MOD=1000000007;
