@@ -26,53 +26,33 @@
 
 using namespace std;
 
-struct pair_hash
-{
-    template <class T1, class T2>
-    std::size_t operator () (std::pair<T1, T2> const &pair) const
-    {
-        std::size_t h1 = std::hash<T1>()(pair.first);
-        std::size_t h2 = std::hash<T2>()(pair.second);
 
-        return h1 ^ h2;
-    }
-};
-
-//BFS
 class Solution {
-public:
-    int maxWidthRamp(vector<int>& A) {
-        queue<pair<int, int> > que;
-        unordered_set<pair<int, int>, pair_hash> rec;
-        rec.insert(make_pair(0, A.size()-1));
-        que.push(make_pair(0, A.size()-1));
+    public:
+        int maxWidthRamp(vector<int>& A) {
+            vector<int> idx;
+            for(int i=0; i<A.size(); i++){
+                idx.push_back(i);
+            }
+            sort(idx.begin(), idx.end(), [&](const int&a, const int& b){
+                    if(A[a]!=A[b]) {
+                        return A[a]<A[b];
+                    }
+                    // Very important, otherwise A[i]=A[j], i<j, we can put j before i causing losing in focus.
+                    return a<b;
+                    });
+            int res=0;
 
-        while(que.size()!=0){
-            pair<int, int> front = que.front();
-            que.pop();
-            int l = front.first;
-            int r = front.second;
-            if(A[l]>A[r]){
-                return r-l;
+            int tmp=INT_MAX;
+            for(int i=0; i<idx.size(); i++){
+                if(i!=0)
+                    res=max(res, idx[i]-tmp);
+                tmp=min(tmp, idx[i]);
             }
-            if(l+1!=r){
-                pair<int,int> ll = make_pair(l+1, r);
-                pair<int,int> rr = make_pair(l, r-1);
-                if(rec.find(ll)!=rec.end()){
-                    rec.insert(ll);
-                    que.push(ll);
-                }
-                if(rec.find(rr)!=rec.end()){
-                    rec.insert(rr);
-                    que.push(rr);
-                }
-            }
+
+            return res;
         }
-        return -1;
-    }
 };
-
-
 
 
 
