@@ -1,4 +1,4 @@
-Total:
+# Total
     previous 1000 problems in Leetcode-CN, there are 540-7=533 middle problems, 211 hard problems.
     533 * 15 = 7995 minutes
     221 * 30 = 6630 minutes
@@ -8,26 +8,13 @@ However, if we spent 8 hours on weekdays and 4 hours each weekends, summing up t
 
 Apart from that, we need spend 30 minutes each day to practice speaking English.
 
-array to do:
-finish before 2021/04/25
-    mid 50
-    hard 4
+## Dynamic Programming
 
-array to do:
-finish before 2021/04/25
-    middle 50*15=750minutes
-    hard 4*30=120minutes
-    total 870 minutes = 15 hours = 2 hours * 5 + 5 hours *2 = 20 hours
+Mon 03 May 2021 06:22:02 PM AWST
+    middle  74
+    hard    56
 
-- https://leetcode-cn.com/problems/majority-element-ii/
-    mo er vote
-- https://leetcode-cn.com/problems/circular-array-loop/
-    fast and slow pointers to detect cycles
-- https://leetcode-cn.com/problems/task-scheduler/
-    Task Scheduler
-- https://leetcode-cn.com/problems/maximum-average-subarray-ii/
-    Hard
-- https://leetcode-cn.com/problems/beautiful-arrangement-ii/
+# Template
     
 std heap
 std priority queue
@@ -43,3 +30,4 @@ summarize all maximum swap, next_permutation problems 670
 stl map sorted, upper_bound so on.
 
 https://leetcode-cn.com/problems/transform-to-chessboard/
+

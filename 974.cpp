@@ -27,10 +27,28 @@
 using namespace std;
 
 
+class Solution {
+public:
+    int subarraysDivByK(vector<int>& A, int K) {
+        int res=0;
+        //all prefix subarries sum before i
+        vector<int> cnt(K, 0);//MOD K, times
+        cnt[0]=1;
+        int sum=0;
+        for(int i=0; i<A.size(); i++){
+            sum=(sum+A[i]%K+K+K)%K;
+            res+=cnt[sum];
+            cnt[sum]++;
+        }
+        return res;
+    }
+};
+
 class SolutionTLNK {
 public:
     int subarraysDivByK(vector<int>& A, int K) {
         int res=0;
+        //all prefix subarries end at i, less contents but need transactions
         vector<int> cnt(K, 0);//MOD K, times
         for(int i=0; i<A.size(); i++){
             A[i]%=K;

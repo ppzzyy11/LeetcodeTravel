@@ -9,8 +9,8 @@
  *      To implement:
  *
  *      How:
- *
- */
+ * */
+
 
 #include <vector>
 #include <set>
@@ -27,23 +27,16 @@
 using namespace std;
 
 
+//for nums
 class Solution {
 public:
-    bool circularArrayLoop(vector<int>& nums) {
-        for(int i=0; i<nums.size(); i++){
-            if(detecCircle(nums, i)){
-                return true;
-            }
-        }
-        return false;
-
-    }
 
     bool detecCircle(vector<int>& nums, int idx){
         vector<int> path;
         //fast, slow pointers
         int fast=idx, slow=idx;
         bool cicular=false;
+        //detect cycle
         while(nums[fast]!=0&&nums[nxtIdx(nums, fast)]){
             path.push_back(slow);
             fast=nxtIdx(nums, nxtIdx(nums, fast));
@@ -81,21 +74,6 @@ public:
 
     }
 
-    bool legal(vector<int>& nums, vector<int>& path){
-        for(int i=0; i<path.size(); i++){
-            int idx=path[i];
-            if(nums[idx]==0){
-                return false;
-            }
-            if(i>0){
-                if(nums[path[i]]*nums[path[i-1]]<0){
-                    return false;
-                }
-            }
-        }
-
-        return path.size()!=1;
-    }
 
     void set0Path(vector<int>& nums, const vector<int>& idxs){
         for(auto idx: idxs){
@@ -123,3 +101,41 @@ int main(){
     return 0;
 }
 
+
+//for linked list
+public class SolutionLinkedList {
+    public ListNode detectCycle(ListNode head) {
+        if (head == null)
+            return null;
+
+        // 找出相遇点
+        ListNode slow = head;       // 慢指针，每次走一步
+        ListNode fast = head;       // 快指针，每次走两步
+        boolean isCycle = false;    // 是否有环标志
+
+        while (fast != null && fast.next != null){
+            fast = fast.next.next;   // 走两步
+            slow = slow.next;        // 走一步
+            if (fast == slow){
+                isCycle = true;     // 有环标志
+                break;              // 退出循环
+            }
+        }
+
+        // 有环则找出起始点
+        if (isCycle){
+            ListNode first = head;      // 从头结点开始遍历，最终和慢指针在环入口点相遇
+            while (first != slow){
+                first = first.next;
+                slow = slow.next;
+            }
+            return slow;
+        }else {
+            return null;
+        }
+    }
+}
+
+————————————————
+版权声明：本文为CSDN博主「稻草人0.0」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/weixin_43989102/article/details/111304495
