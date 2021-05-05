@@ -22,3 +22,15 @@ analyze problems instead go straight to debug
 In some dynamic problems, map as dp can save space than matrix, because not all grid will be used
 
 subarraty sum -> prefix sum
+
+panlinrome -> panlinrome matrix, after a O(N^2), we can determine whther a substring is a palindrome in O(1)
+
+DP state -> tansform
+
+opposite
+
+trick
+
+trans hard into sevel middle
+
+Hard problems are combinations of middlle and general problems.
