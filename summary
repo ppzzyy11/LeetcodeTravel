@@ -34,3 +34,6 @@ trick
 trans hard into sevel middle
 
 Hard problems are combinations of middlle and general problems.
+
+
+"minimize the maximum" or "maximize the minimum" leads to binary search. After determine the upper and lower bound of the target value, it is a must that we find a linear way to verify our possible value.
