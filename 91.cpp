@@ -36,9 +36,11 @@ public:
                 if(i==0||s[i-1]<='0'||s[i-1]>='3'){
                     return 0;
                 }
-                dp[i+1]=dp[i];
+                // s[i] must combine with s[i-1]
+                dp[i+1]=dp[i-1];
 
-            }else if(i!=0&&((s[i-1]=='1'&&s[i]>='0'&&s[i]<='9')||(s[i-1]=='2'&&s[i]>='0'&&s[i]<='6'))&&(i==s.size()-1||s[i+1]!='0')){
+            }else if(i!=0&&((s[i-1]=='1'&&s[i]>='0'&&s[i]<='9')||(s[i-1]=='2'&&s[i]>='0'&&s[i]<='6'))){
+                //d[i] i is alone, d[i-1]: i is with i-1
                 dp[i+1]=dp[i]+dp[i-1];
             }else{
                 dp[i+1]=dp[i];

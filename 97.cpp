@@ -33,6 +33,7 @@ public:
         if(s1.size()+s2.size()!=s3.size()){
             return false;
         }
+        //waste space
         vector<vector<vector<bool>>> dp(s1.size()+1, vector<vector<bool>>(s2.size()+1, vector<bool>(s3.size()+1, false)));
         dp[0][0][0]=true;
         for(int i=0; i<s1.size(); i++){
@@ -51,6 +52,7 @@ public:
 
         for(int i=0; i<s1.size(); i++){
             for(int j=0; j<s2.size(); j++){
+                //k is calulated by i/j, so there is no need to use a 3-dimension array, use a 2-dimension matrix instead.
                 int k=i+j+2-1;
                 if(s1[i]==s3[k]){
                     dp[i+1][j+1][k+1] = dp[i+1][j+1][k+1]| dp[i][j+1][k];

@@ -47,9 +47,9 @@ public:
                     //p[j-1]*, p[j-1] repreats for 0 or many times.
                     dp[i+1][j+1]=dp[i+1][j+1]
                         |dp[i+1][j-1];//p[j-1] repreat for 0 times
+
                         if(p[j-1]==s[i]||p[j-1]=='.'){
                             dp[i+1][j+1]=dp[i+1][j+1]
-                                |dp[i][j]
                                 |dp[i][j+1];//repreat for 1 time
                         }
                 }else{
