@@ -37,3 +37,5 @@ Hard problems are combinations of middlle and general problems.
 
 
 "minimize the maximum" or "maximize the minimum" leads to binary search. After determine the upper and lower bound of the target value, it is a must that we find a linear way to verify our possible value.
+
+when size_t compares with integer, we should make sure that int is greater thant or equal to 0, othewise an integer with value -1 will be greater than size_t 0.
