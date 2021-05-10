@@ -30,46 +30,57 @@ using namespace std;
 class Solution {
 
     //visited, des
-    unordered_map<int, unordered_map<int, bool> > rec;
+    //unordered_map<int, unordered_map<int, bool> > rec;
+    unordered_map<int, bool > rec;
+    // vector<vector<int> > rec;
 public:
     bool canIWin(int maxChoosableInteger, int desiredTotal) {
+        if (maxChoosableInteger >= desiredTotal)
+        {
+            return true;
+        }
+        if ((1+maxChoosableInteger)*maxChoosableInteger/2 < desiredTotal)
+        {
+            return false;
+        }
+
+        // rec.resize(addNth(0, maxChoosableInteger+), vector<int>(desiredTotal, -1));
         return recur(0, desiredTotal, maxChoosableInteger);
     }
 
     bool recur(int visited, int des, const int& maxChoosableInteger){
-        if(rec[visited].count(visited)&&rec[visited].count(des)){
-            return rec[visited][des];
-        }
+        // if(rec[visited][des]!=-1){
+        //if(rec.count(visited)&&rec[visited].count(des)){
+            //return rec[visited][des];
+        //}
 
-        for(int i=maxChoosableInteger; i>=0; i--){
-            if(getNthBit(visited, i)==false&&i>=des){
-                return rec[addNth(visited, i)][des]=true;
-            }
+        if(rec.count(visited)){
+            return rec[visited];
         }
 
         for(int i=1; i<=maxChoosableInteger; i++){
             if(getNthBit(visited, i)==false){
-                addNth(visited, i);
-                if(recur(visited, des-i, maxChoosableInteger)==false){
-                    return rec[visited][des]=true;;
+                if(i>=des||recur(addNth(visited, i), des-i, maxChoosableInteger)==false){
+                    //return rec[visited][des]=true;
+                    return rec[visited]=true;
                 }
-                removeNth(visited, i);
             }
         }
 
-        return rec[visited][des]=false;
+        return rec[visited]=false;
+        //return rec[visited][des]=false;
 
     }
 
-    bool getNthBit(int num, int n){
+    inline bool getNthBit(int num, int n){
         return num&(1<<n);
     }
 
-    int addNth(int num, int n){
+    inline int addNth(int num, int n){
         return num|(1<<n);
     }
 
-    int removeNth(int num, int n){
+    inline int removeNth(int num, int n){
         return num&~(1<<n);
     }
 
