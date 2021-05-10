@@ -26,8 +26,7 @@
 
 using namespace std;
 
-struct pair_hash
-{
+struct pair_hash {
     template <class T1, class T2>
     std::size_t operator () (std::pair<T1, T2> const &pair) const
     {
