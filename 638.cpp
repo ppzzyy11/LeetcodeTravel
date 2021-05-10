@@ -73,12 +73,12 @@ public:
         return res;
     }
 
-    bool add1(vector<int>& nums){
+    bool add1(vector<int>& nums, const vector<int>& needs){
         int add=1;
         for(int i=0; i<nums.size(); i++){
             nums[i]+=add;
-            add=nums[i]/MAX;
-            nums[i]=nums[i]%MAX;
+            add=nums[i]/needs[i];
+            nums[i]=nums[i]%needs[i];
         }
         return add==0;
     }
