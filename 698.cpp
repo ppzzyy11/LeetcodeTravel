@@ -31,45 +31,48 @@ class Solution {
 public:
     bool canPartitionKSubsets(vector<int>& nums, int k) {
         int sum=0;
-        for(auto& num: nums){
+        for(const auto& num: nums){
             sum+=num;
         }
         if(sum%k!=0){
             return false;
         }
-        int n=nums.size();
-
-        vector<bool> visited(n,false);
-        return possible(nums, 0, 0, k, visited, sum/k);
-
-    }
-
-
-    bool possible(const vector<int>& nums, int idx,int sum,int k, vector<bool>& visited, const int target ){
-        //dp memorization
-        if(sum>target){
-            return false;
-        }
-        if(sum==target){
-            k--;
-            if(k==0){
-                return true;
+        for(const auto& num: nums){
+            if(num>sum/k){
+                return false;
             }
         }
+        vector<int> sums(k, 0);
+
+        return recur(sums, nums, 0, sum/k);
+
+    }
+
+    bool recur(vector<int>& sums, const vector<int>& nums, int idx, const int target){
         if(idx==nums.size()){
-            return false;
+            for(const auto& sum: sums){
+                if(sum!=target){
+                    return false;
+                }
+            }
+            return true;
         }
 
-        bool res=false;
-        if(visited[idx]==false){
-            visited[idx]=true;
-            res=res|possible(nums, idx+1, sum+nums[idx], k, visited, target);
-            visited[idx]=false;
+        for(int i=0; i<sums.size(); i++){
+            sums[i]+=nums[idx];
+            if(recur(sums, nums, idx+1, target)){
+                return true;
+            }
+            sums[i]-=nums[idx];
         }
-        res=res|possible(nums, idx+1, sum, k, visited, target);
-        return res;
+        return false;
     }
+
+
+    bool
 };
+
+
 
 
 
