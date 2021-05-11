@@ -27,9 +27,12 @@
 using namespace std;
 
 
-class Solution {
+
+
+class SolutionBF {
 public:
     int MAX=11;
+    //use vector<int>& needs to memorize the answer
     int shoppingOffers(vector<int>& price, vector<vector<int> >& special, vector<int>& needs) {
         int n=price.size();
         unordered_map<int, int> rec;
@@ -58,9 +61,7 @@ public:
                     }
                     rec[idx]=min(rec[idx],special[i][n]+rec[getNum(tmp)] );
                 }
-
             }
-
         }
         return rec[getNum(needs)];
     }
