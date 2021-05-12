@@ -29,24 +29,48 @@ using namespace std;
 
 class Solution {
 public:
+    int duplicatedLen(string s){
+        return (s+s).find(s, 1);
+    }
+
+    int lenOfNum(int num){
+        int res=0;
+        while(num){
+            res++;
+            num=num/10;
+        }
+        return res;
+    }
     string encode(string str) {
         int n=str.size();
         vector<vector<string> > dp(n, vector<string>(n, ""));
-        for(int s=0; s<n; s++){
-            for(int e=s; e<n; e++){
-                dp[s][e]=str.substr(s, e-s+1);
+        for(int i=0; i<n; i++){
+            for(int j=0; j<n; j++){
+                dp[i][j]=str.substr(i,j-i+1);
             }
         }
 
-        for(int k=0; k<n; k++){
-            for(int i=0; i<k; i++){
-                //[i,j,k]
-                for(int j=i; j<k; j++){
+        for(int len=3; len<=n; len++){
+            for(int s=0; s+len<n; s++){
+                int e=s+len-1;
+                int subLen=duplicatedLen(str.substr(s, len+1));
+                int rep =(len+1)/subLen;
+                string substr=str.substr(s, subLen);
+                if(subLen<len){
+                    int repLen=lenOfNum(rep)+2+subLen;
+                    if(repLen<dp[s][s+len].size()){
+                        dp[s][s+len]=to_string(rep)+"["+dp[s][s+subLen-1]+"]";
+                    }
+                }
 
-
+                for(int k=0; k<len; k++){
+                    if(dp[s][s+len].size()>(dp[s][s+k].size()+dp[s+k+1][s+len].size())){
+                        dp[s][s+len]=dp[s][s+k]+dp[s+k+1][s+len];
+                    }
                 }
             }
         }
+        return dp[0][n-1];
     }
 };
 
@@ -56,6 +80,9 @@ public:
 
 
 int main(){
+    Solution s;
+    string str="aaaaaa";
+    cout<<s.duplicatedLen(str);
     return 0;
 }
 

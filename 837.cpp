@@ -31,12 +31,12 @@ class Solution {
     unordered_map<int, double> rec;
 public:
     double new21Game(int n, int k, int maxPts) {
-        return getRate(0, n, k, maxPts, 0.0);
+        return getRate(0, n, k, maxPts,0);
 
     }
 
-    double getRate(int sum, int target, int upper, int maxP, double d){
-        if(d<0.000001){
+    double getRate(int sum, int target, int upper, int maxP, int dep){
+        if(dep>10000){
             return 0;
         }
         if(rec.count(sum)!=0){
@@ -51,7 +51,7 @@ public:
 
         double res=0;
         for(int p=1; p<=maxP; p++){
-            res+=getRate(sum+p, target, upper, maxP, d*(double)(target-upper+1)/(maxP*1.0));
+            res+=getRate(sum+p, target, upper, maxP);
         }
         res=res/maxP;
         return rec[sum]=res;
