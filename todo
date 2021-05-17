@@ -49,3 +49,6 @@ https://leetcode-cn.com/problems/partition-to-k-equal-sum-subsets/
 https://leetcode-cn.com/problems/partition-to-k-equal-sum-subsets/
 
 lack strict judge, always maybe
+
+
+reduce problems size from 1000 down to 500

@@ -30,6 +30,39 @@ using namespace std;
 class Solution {
 public:
     int findMinMoves(vector<int>& machines) {
+        int sum=0;
+        int n=machines.size();
+        for(const int& m:machines){
+            sum+=m;
+        }
+
+        if(sum%n!=0){
+            return -1;
+        }
+
+        for(int& m: machines){
+            m=m-sum/n;
+        }
+
+        int prefixSum=0;
+        int maxSum=0;
+        int res=0;
+        int prefixRes=0;
+        for(const int& m: machines){
+            prefixSum+=m;
+            maxSum=max(maxSum, abs(prefixSum));
+            //if m < 0, then, m just receive clothes, which are not calculated as steps
+            res=max(res, m);
+            res=max(res, maxSum);
+        }
+
+        return res;
+    }
+};
+
+class SolutionTLE {
+public:
+    int findMinMoves(vector<int>& machines) {
         int n = machines.size();
         int sum=0;
         for(int i=0; i<machines.size(); i++){
