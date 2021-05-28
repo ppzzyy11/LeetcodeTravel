@@ -37,7 +37,7 @@ struct pair_hash{
         }
 };
 
-class Solution {
+class SolutionSPNotRight {
 
 public:
     //shortest length in lexicographical order.
