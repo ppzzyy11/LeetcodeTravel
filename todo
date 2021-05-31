@@ -52,7 +52,7 @@ lack strict judge, always maybe
 
 
 reduce problems size from 1000 down to 500
-difficutly  total   done    left
-middle      280     148(t213)     131
-hard        96      45(t55)      51
+difficutly  total   done        left
+middle      280     214(t86)    86
+hard        96      59(t37)     37
 (t(total ))
