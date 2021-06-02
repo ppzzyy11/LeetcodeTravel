@@ -5,10 +5,11 @@
 
 using namespace std;
 
-bool Mycompare(const int &a,const int &b)//should a be after b?
+bool Mycompare(const int &a,const int &b)//should a be after b? It is opposite to sort()'s customed algorithm.
 {
     return a>b;
 }
+//by default heap in cpp is a Max heap.
 int main()
 {
     vector<int> nums;
