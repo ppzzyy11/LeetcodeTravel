@@ -39,6 +39,7 @@ struct Node{
 
 class cmp{
     public:
+        //less
         bool operator()(const Node& n1, const Node& n2) const{
             return n1 < n2;
         }
@@ -46,6 +47,7 @@ class cmp{
 
 int main(){
 
+    //default max heap
     priority_queue<Node, vector<Node>, cmp> q;
     Node n1; n1.f = 5;
     Node n2; n2.f = 4;
