@@ -52,7 +52,7 @@ lack strict judge, always maybe
 
 
 reduce problems size from 1000 down to 500
-difficutly  total   done        left
-middle      279     220(t59)    59
-hard        96      69(t30)     30
+difficutly  total   done   left    sql     shell
+middle      279     249    30      4       2
+hard        96      77     19      2       0
 (t(total ))
